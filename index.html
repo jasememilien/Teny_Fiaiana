@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="mg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teny Fiainana - Fampiharana Mpiara-dia ara-panahy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hymn-card {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+        }
+
+        .bible-verse {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+        }
+
+        .ai-chat-bubble {
+            border-radius: 20px 20px 20px 0;
+        }
+
+        .user-chat-bubble {
+            border-radius: 20px 20px 0 20px;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4">
+                    <img src="logo10.png" alt="Logo Teny Fiainana" class="h-8 w-8">
+                    <h3 class="text-xl font-bold">Teny Fiainana</h3>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="hover:text-gray-200 transition">Endri-javatra</a>
+                    <a href="#hymns" class="hover:text-gray-200 transition">Fihirana</a>
+                    <a href="#bible" class="hover:text-gray-200 transition">Baiboly</a>
+                    <a href="#beliefs" class="hover:text-gray-200 transition">Finoana</a>
+                    <a href="#jasem" class="hover:text-gray-200 transition">Jasem AI</a>
+                </nav>
+                <button class="md:hidden text-xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4 pb-2" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="hover:text-gray-200 transition">Endri-javatra</a>
+                    <a href="#hymns" class="hover:text-gray-200 transition">Fihirana</a>
+                    <a href="#bible" class="hover:text-gray-200 transition">Baiboly</a>
+                    <a href="#beliefs" class="hover:text-gray-200 transition">Finoana</a>
+                    <a href="#jasem" class="hover:text-gray-200 transition">Jasem AI</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Mpiara-dia amin'ny dianao ara-panahy</h2>
+                <p class="text-xl mb-8">Manatsara ny fanompoana, ny fianarana, ary ny finoana ho an'ny fiangonana
+                    Adventista sy Kristiana miaraka amin'ny teknolojia maoderina sy votoatiny ara-baiboly azo itokisana.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://drive.usercontent.google.com/download?id=1EkBa6MjRIZMPjFD_NLfCO61n87As7Mav&export=download&authuser=0" download="Teny_Fiainana.apk"
+                        class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Alaina ny Application
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-white opacity-20 rounded-3xl blur-lg"></div>
+                    <img src="https://via.placeholder.com/400x700/4f46e5/ffffff?text=Teny+Fiainana"
+                        alt="Sary ny fampiharana"
+                        class="relative rounded-2xl shadow-2xl w-64 md:w-80 border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Endri-javatra Mahomby</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Namboarina hanohanana ny fitomboanao ara-panahy sy ny
+                    traikefanao amin'ny fanompoana</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-music text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fihirana Adventista</h3>
+                    <p class="text-gray-600 mb-4">Fikarohana haingana amin'ny laharana, lohateny, na teny fanalahidy.
+                        Ampidino ho an'ny fihainoana ivelan'ny aterineto ary mamorona fihirana manokana.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fampidirana/famoahana JSON</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fifehezana ny fihainoana</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fihirana tiana</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bible text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Baiboly Protestanta Malagasy</h3>
+                    <p class="text-gray-600 mb-4">Fidirana feno amin'ny lahatsoratra miaraka amin'ny fitetezana toko sy
+                        fikarohana haingana amin'ny teny, andian-teny, na fanondroana.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Dikan-teny 1865</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Baiboly misy feo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fanamarihana andininy</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cross text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fotom-pinoana Advantista 28</h3>
+                    <p class="text-gray-600 mb-4">Fanazavana mazava tsara miaraka amin'ny fototra ara-baiboly,
+                        ahafahanao mianatra ireo fototra ny famonjena hita ao amin'ny baiboly, afaka zarainao ihany koa
+                        ho an'ny namana na amin'ny vondrona.</p>
+                    <ul class="space-y-2 text-gray-600">
+
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Torolàlana ho an'ny fianarana</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Votoatiny azo zaraina</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-share-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fizarana & Fitehirizana</h3>
+                    <p class="text-gray-600 mb-4">Zarao ny fihirana, na andininy, na fampianarana, ary afaka zarainao
+                        amin'ny WhatsApp,
+                        Facebook, na mailaka. Tehirizo ny hira tianao mba hafahanao mitairy ny hira hankafizina.</p>
+
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Jasem IA - Mpiara-dia Ara-panahy</h3>
+                    <p class="text-gray-600 mb-4"> <strong>Teny Fiainana</strong> dia manolotra mpanampy manan-tsaina
+                        antsoina hoe <strong>Jasem AI</strong>, noforonina ho valin-javatra amin’ireo fanontaniana
+                        ara-baiboly sy fampianarana Advantista rehetra.
+
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Mifototra amin'ny Baiboly & EGW</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Mifanaraka amin'ny fiteny maro</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Valiny mifototra amin'ny lohahevitra</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Fitomboana ara-panahy</h3>
+                    <p class="text-gray-600 mb-4">Manambatra ny teknolojia maoderina sy votoaty ara-baiboly azo
+                        itokisana hanohanana ny fanompoana, fizarana, ary finoana.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Fampianarana isan'andro</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Drafitra famakiana</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hymns Section -->
+    <section id="hymns" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fihirana Adventista</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Misy hira 800 isa, ary efa misy playback ny hira 590,
+                    izay afaka sintomina(télécharger) dia mihaino tsy mila connexion intsony avy eo.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Ireo lohahevitra hita ao anatin'ny fihirana
+                            </h3>
+
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                            <button
+                                class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg font-medium hover:bg-indigo-200 transition">SALAMO</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">ANDRIAMANITRA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">JESOSY
+                                KRISTY</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">FANAHY
+                                MASINA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">NY
+                                TENIN'ANDRIAMANITRA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">NY
+                                FIANGONANA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">FITORIANA
+                                NY FILAZANTSARA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">FIAINANA
+                                KRISTIANA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">FOTOANA
+                                SAMY HAFA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">TANORA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">HIRAN'OLON-TOKANA
+                                - OLON-DROA - RODOBEA</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">HIRA
+                                FANAMPINY</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Section -->
+    <section id="bible" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Baiboly Protestanta Malagasy (1865)</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ny Tenin'Andriamanitra feno amin'ny fiteninao</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <audio id="bible-audio"
+                            src="https://nybaiboly.net/Henoynybaiboly/Audio_2021/HNB_2021_at01-001.mp3"
+                            preload="none"></audio>
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Genesisy 1:1-5</h3>
+                            <div class="flex space-x-3">
+                                <button id="play-audio-btn"
+                                    data-audio="https://nybaiboly.net/Henoynybaiboly/Audio_2021/HNB_2021_at01-001.mp3"
+                                    class="text-gray-600 hover:text-indigo-600">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-indigo-600">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-indigo-600">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bible-verse text-gray-800 mb-6">
+                            <p class="mb-4"><sup>1</sup> Tamin'ny voalohany Andriamanitra nahary ny lanitra sy ny tany.
+                            </p>
+                            <p class="mb-4"><sup>2</sup> Ary ny tany dia tsy nisy endrika sady foana; ary aizina no
+                                tambonin'ny lalina. Ary ny fanahin'Andriamanitra nanomba tambonin'ny rano.</p>
+                            <p class="mb-4"><sup>3</sup> Ary Andriamanitra nanao hoe: Misia mazava; dia nisy mazava.</p>
+                            <p class="mb-4"><sup>4</sup> Ary hitan'Andriamanitra fa tsara ny mazava; ary
+                                nampisarahin'Andriamanitra ny mazava sy ny maizina.</p>
+                            <p class="mb-4"><sup>5</sup> Ary Andriamanitra nanao ny mazava hoe andro; ary ny maizina
+                                nataony hoe alina. Dia nisy hariva, ary nisy maraina, andro voalohany izany.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Beliefs Section -->
+    <section id="beliefs" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fotom-pinoana 28</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Fotom-pinoana 28 ny Fiangonana Advantista mitandrina
+                    ny andro fahafito</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Jereo ny Finoanay</h3>
+
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <button
+                                class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg font-medium hover:bg-indigo-200 transition">Ny
+                                Soratra Masina</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Andriamanitra
+                                Telo Izay Iray</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Andriamanitra
+                                Ray</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Zanaka</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Fanahy
+                                Masina</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Famoronana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Toetran'ny Olombelona</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ilay
+                                fifanandrinana Lehibe</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fiainan'i Kristy sy ny Fahafatesany ary ny Fitsanganany tamin'ny Maty</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fanandramana ny famonjena</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Mitombo
+                                ao amin'i Kristy</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fiangonana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Sisa sy ny Iraka Anirahana Azy</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Firaisana
+                                ao amin'ny Tenan'i Kristy</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Batisa</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fanasan'i Tompo</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fanomezam-Pahasoavan'ny Fanahy Masina sy ny asa Fanompoana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fanomeza-Pahasoavan'ny Faminaniana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Lalàn'Andriamanitra</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Sabata</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fitadremam-pananana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Toetra sy Fihetsika Kristianina</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fanambadiana sy ny Ankohonana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Asan'i Kristy ao amin'ny Fitoerana Masina any an-Danitra</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fiavian'i Kristy Fanindroany</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Fahafatesana sy ny Fitsanganana amin'ny Maty</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Arivo Taona sy ny Famaranana ny Fahotana</button>
+                            <button
+                                class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition">Ny
+                                Tany vaovao</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Jasem AI Section -->
+    <section id="jasem" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Jasem AI – Ny Mpanampy ara-panahinao</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Valiny mandeha amin'ny AI ho an'ny fanontanianao
+                    mifandraika amin'ny Baiboly sy Adventista</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-indigo-50 rounded-xl shadow-md overflow-hidden mb-8">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-indigo-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Momba ny Jasem AI</h3>
+                                <p class="text-gray-600">Noforonin'i RAKOTONOELINA Andrianantenaina Emilien</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <p class="text-gray-700 mb-4">Jasem AI dia mpanampy artifisialy voaofana hamaly fanontaniana
+                                mifototra amin'ny Baiboly sy ny soratry Ellen G. White. Manohana fiteny maro izy io,
+                                anisan'izany ny Malagasy, Frantsay, ary Anglisy.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Mifototra
+                                    amin'ny Baiboly</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Fiteny
+                                    maro</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Misy
+                                    24/7</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Valiny
+                                    mahatoky</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Resaho amin'ny Jasem AI</h3>
+
+                        <div class="space-y-4 mb-6 h-64 overflow-y-auto p-4 border border-gray-200 rounded-lg">
+                            <!-- AI Message -->
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-robot text-indigo-600"></i>
+                                </div>
+                                <div class="ai-chat-bubble bg-indigo-100 text-gray-800 p-4 max-w-xs md:max-w-md">
+                                    <p>Miarahaba! Izaho Jasem AI, ny mpanampy ara-panahinao. Ahoana no ahafahako manampy
+                                        anao amin'ny fanontaniana mifandraika amin'ny Baiboly na Adventista anio?</p>
+                                </div>
+                            </div>
+
+                            <!-- User Message -->
+                            <div class="flex items-start justify-end">
+                                <div class="user-chat-bubble bg-indigo-600 text-white p-4 max-w-xs md:max-w-md">
+                                    <p>Inona no lazain'ny Baiboly momba ny Sabata?</p>
+                                </div>
+                                <div class="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center ml-3">
+                                    <i class="fas fa-user text-white"></i>
+                                </div>
+                            </div>
+
+                            <!-- AI Message -->
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-robot text-indigo-600"></i>
+                                </div>
+                                <div class="ai-chat-bubble bg-indigo-100 text-gray-800 p-4 max-w-xs md:max-w-md">
+                                    <p>Ny Baiboly dia mampianatra fa ny Sabata no andro fahafito amin'ny herinandro,
+                                        andro masina fitsaharana natsangan'Andriamanitra tamin'ny famoronana (Genesisy
+                                        2:1-3). Ny didy fahefatra dia milaza: "Tsarovy ny andro Sabata hanamasinana azy"
+                                        (Eksodosy 20:8-11). Jesosy dia nanamafy fa "ny Sabata dia natao ho an'ny olona"
+                                        (Marka 2:27).</p>
+                                </div>
+                            </div>
+
+                            <!-- Typing Indicator -->
+                            <div class="flex items-start hidden" id="typing-indicator">
+                                <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-robot text-indigo-600"></i>
+                                </div>
+                                <div class="ai-chat-bubble bg-indigo-100 text-gray-800 p-4 max-w-xs md:max-w-md">
+                                    <div class="flex space-x-2">
+                                        <div class="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
+                                        <div class="w-2 h-2 bg-gray-500 rounded-full animate-pulse delay-100"></div>
+                                        <div class="w-2 h-2 bg-gray-500 rounded-full animate-pulse delay-200"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <input type="text" placeholder="Anontanio ny fanontanianao..."
+                                class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <button
+                                class="bg-indigo-600 text-white px-6 py-2 rounded-r-lg font-medium hover:bg-indigo-700 transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+
+                        <div class="mt-4 text-sm text-gray-500">
+                            <p>Ny valin'ny Jasem AI dia mifototra amin'ny Baiboly sy ny fampianaran'ny Adventista. Ho
+                                an'ny fanontaniana teolojika sarotra, miresaha amin'ny mpitandrinao.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Izay Lazain'ny Mpampiasa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Fijorona vavolom-belona ireo olona vitsivitsy
+                    nanaovana fanandramana tamin'ilay fampiharana Teny Fiainana</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold text-xl mr-4">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">RAKOTONOELINA N. Lanto Herizo</h4>
+                            <p class="text-gray-500 text-sm">Loholona, Antananarivo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Ny Teny Fiainana dia nanova ny fomba fiomanako amin'ny toriteny. Ny
+                        fananana ny Baiboly Malagasy sy ny fihirana ao amin'ny toerana iray dia mamonjy ora maro
+                        isan-kerinandro."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">RAKOTONIAINA Tsirimamy N.</h4>
+                            <p class="text-gray-500 text-sm">Mpampivelona, Maintirano</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Mampiasa ny fihirana aho isaky ny Sabata ho an'ny Sekoly Sabata ho
+                        an'ny ankizy. Tian'ny ankizy ny mihira miaraka amin'ny endri-javatra fihainoana!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">RAKOTONIAINA Rindramamy F.</h4>
+                            <p class="text-gray-500 text-sm">Mpianatra, Antananarivo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Nanampy ahy hahatakatra andininy sarotra ao amin'ny Baiboly ho an'ny
+                        fianarako tenin'Andriamanitra i Jasem AI. Toy ny manana mpampianatra azo antsoina 24/24"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Vonona Hanamafy ny Dianao ara-panahy ve Ianao?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Alao ny Teny Fiainana anio ary zarao ny fanompoana, fianarana, ary
+                finoana tsy mbola nisy toy izany.</p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="https://drive.usercontent.google.com/download?id=1EkBa6MjRIZMPjFD_NLfCO61n87As7Mav&export=download&authuser=0" download="Teny_Fiainana.apk"
+                    class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center justify-center">
+                    <i class="fas fa-download mr-2"></i> Alaina ny Application
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo10.png" alt="Logo Teny Fiainana" class="h-8 w-8">
+                        <h3 class="text-xl font-bold">Teny Fiainana</h3>
+                    </div>
+                    <p class="text-gray-400">Manatsara ny dian'ny fiainana ara-panahy amin'ny alalan'ny teknolojia ho
+                        an'ny fiangonana Adventista sy Kristiana.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Endri-javatra</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Fihirana Adventista</a></li>
+                        <li><a href="#" class="hover:text-white transition">Baiboly Malagasy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Fotom-pinoana 28</a></li>
+                        <li><a href="#" class="hover:text-white transition">Jasem AI</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Mifandraisa</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://web.facebook.com/rakotonoelina.macjasem"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="https://wa.me/+261344160515"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">jasememilien@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p id="copyright"></p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const copyrightElement = $('#copyright');
+            if (copyrightElement.length) {
+                const startYear = 2023;
+                const currentYear = new Date().getFullYear();
+                const yearRange = startYear < currentYear ? `${startYear}-${currentYear}` : startYear;
+                copyrightElement.html(`© ${yearRange} Teny Fiainana. Zo rehetra voatokana. Noforonin'i RAKOTONOELINA Andrianantenaina Emilien.`);
+            } else {
+                console.warn("L'élément avec l'ID 'copyright' n'a pas été trouvé.");
+            }
+        });
+    </script>
+    <script>
+
+        // Dynamiser l'année du copyright
+        const startYear = 2023;
+        const currentYear = new Date().getFullYear();
+        const yearRange = startYear < currentYear ? `${startYear}-${currentYear}` : startYear;
+        document.getElementById('copyright').innerHTML = `© ${yearRange} Teny Fiainana. Zo rehetra voatokana. Noforonin'i RAKOTONOELINA Andrianantenaina Emilien.`;
+        // Fampandehanana ny menu amin'ny finday
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Fampandehanana ny accordion ho an'ny finoana
+        const beliefToggles = document.querySelectorAll('[id^="belief-toggle-"]');
+        beliefToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const id = this.id.split('-')[2];
+                const content = document.getElementById(`belief-content-${id}`);
+                const icon = document.getElementById(`belief-icon-${id}`);
+
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Fandrika valinteny AI
+        const chatInput = document.querySelector('#jasem input[type="text"]');
+        const chatButton = document.querySelector('#jasem button');
+        const chatContainer = document.querySelector('#jasem .h-64');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        chatButton.addEventListener('click', function () {
+            if (chatInput.value.trim() === '') return;
+
+            // Ampio ny hafatry ny mpampiasa
+            const userMessage = document.createElement('div');
+            userMessage.className = 'flex items-start justify-end';
+            userMessage.innerHTML = `
+            <div class="user-chat-bubble bg-indigo-600 text-white p-4 max-w-xs md:max-w-md">
+                <p>${chatInput.value}</p>
+            </div>
+            <div class="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center ml-3">
+                <i class="fas fa-user text-white"></i>
+            </div>
+        `;
+            chatContainer.appendChild(userMessage);
+
+            // Asehoy ny famantarana ny fanoratana
+            typingIndicator.classList.remove('hidden');
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Esory ny votoatin'ny fampidirana
+            const userQuestion = chatInput.value;
+            chatInput.value = '';
+
+            // Fandrika ny fisainan'ny AI
+            setTimeout(() => {
+                typingIndicator.classList.add('hidden');
+
+                // Ampio ny valintenin'ny AI
+                const aiResponse = document.createElement('div');
+                aiResponse.className = 'flex items-start';
+                aiResponse.innerHTML = `
+                <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-robot text-indigo-600"></i>
+                </div>
+                <div class="ai-chat-bubble bg-indigo-100 text-gray-800 p-4 max-w-xs md:max-w-md">
+                    <p>${getAIResponse(userQuestion)}</p>
+                </div>
+            `;
+                chatContainer.appendChild(aiResponse);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }, 1500);
+        });
+
+        // Logika tsotra ho an'ny valintenin'ny AI
+        function getAIResponse(question) {
+            const lowerQuestion = question.toLowerCase();
+
+            if (lowerQuestion.includes('sabbath') || lowerQuestion.includes('sabata')) {
+                return "Ny Sabata dia ny andro fahafito amin'ny herinandro, andro masina fialan-tsasatra natsangan'Andriamanitra tamin'ny Famoronana (Genesisy 2:1-3). Izy io dia fahatsiarovana ny herin'Andriamanitra mpamorona sy famantarana ny fifandraisantsika aminy (Eksodosy 31:13).";
+            } else if (lowerQuestion.includes('second coming') || lowerQuestion.includes('fiavian\'i kristy fanindroany') || lowerQuestion.includes('advent')) {
+                return "Ny Fiavian'i Kristy Fanindroany dia ny fanantenana sambatra ho an'ny Fiangonana (Titosy 2:13). Hiverina hita maso i Jesosy, amin'ny voninahitra, mba hanangana ny maty marina sy hitondra ny zanany mahatoky ho any an-danitra (1 Tesalonianina 4:16-17).";
+            } else if (lowerQuestion.includes('baptism') || lowerQuestion.includes('batisa')) {
+                return "Ny Batisa amin'ny fandevenana dia maneho ny fahafatesantsika amin'ny ota sy ny fitsanganantsika ho amin'ny fiainana vaovao ao amin'i Kristy (Romanina 6:3-4). Izy io dia fanehoana ivelany ny finoana an'i Jesosy sy ny fanekena ny famelany ny fahotana (Asan'ny Apostoly 2:38).";
+            } else {
+                return "Misaotra amin'ny fanontanianao. Hoy ny Baiboly ao amin'ny Jeremia 33:3: 'Antsoy Aho, dia hamaly anao Aho ka hilaza aminao zavatra lehibe sy tsy fantatra izay tsy mbola hitanao.' Te-hanome andininy manokana momba ity lohahevitra ity ve aho?";
+            }
+        }
+    </script>
+</body>
+
+</html>
